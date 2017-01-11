@@ -12,6 +12,8 @@
 		11377B941E1CA4C6008A23E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11377B921E1CA4C6008A23E8 /* Main.storyboard */; };
 		11377B961E1CA4C6008A23E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11377B951E1CA4C6008A23E8 /* Assets.xcassets */; };
 		11377B991E1CA4C6008A23E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11377B971E1CA4C6008A23E8 /* LaunchScreen.storyboard */; };
+		1164B7961E247B1100D58D1C /* YLPhonePermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164B7951E247B1100D58D1C /* YLPhonePermissions.swift */; };
+		1164B7981E24850500D58D1C /* YLScanViewSytle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164B7971E24850500D58D1C /* YLScanViewSytle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		11377B951E1CA4C6008A23E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11377B981E1CA4C6008A23E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11377B9A1E1CA4C6008A23E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1164B7951E247B1100D58D1C /* YLPhonePermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLPhonePermissions.swift; sourceTree = "<group>"; };
+		1164B7971E24850500D58D1C /* YLScanViewSytle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLScanViewSytle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +58,14 @@
 		11377B8D1E1CA4C6008A23E8 /* YLScan */ = {
 			isa = PBXGroup;
 			children = (
+				1164B7951E247B1100D58D1C /* YLPhonePermissions.swift */,
 				11377B8E1E1CA4C6008A23E8 /* AppDelegate.swift */,
 				11377B901E1CA4C6008A23E8 /* ViewController.swift */,
 				11377B921E1CA4C6008A23E8 /* Main.storyboard */,
 				11377B951E1CA4C6008A23E8 /* Assets.xcassets */,
 				11377B971E1CA4C6008A23E8 /* LaunchScreen.storyboard */,
 				11377B9A1E1CA4C6008A23E8 /* Info.plist */,
+				1164B7971E24850500D58D1C /* YLScanViewSytle.swift */,
 			);
 			path = YLScan;
 			sourceTree = "<group>";
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				11377B911E1CA4C6008A23E8 /* ViewController.swift in Sources */,
+				1164B7961E247B1100D58D1C /* YLPhonePermissions.swift in Sources */,
+				1164B7981E24850500D58D1C /* YLScanViewSytle.swift in Sources */,
 				11377B8F1E1CA4C6008A23E8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +308,7 @@
 				11377B9F1E1CA4C6008A23E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
