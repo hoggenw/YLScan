@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112AE8161E2BAB3500E688A7 /* YLScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112AE8151E2BAB3500E688A7 /* YLScanView.swift */; };
 		11377B8F1E1CA4C6008A23E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11377B8E1E1CA4C6008A23E8 /* AppDelegate.swift */; };
 		11377B911E1CA4C6008A23E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11377B901E1CA4C6008A23E8 /* ViewController.swift */; };
 		11377B941E1CA4C6008A23E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11377B921E1CA4C6008A23E8 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		112AE8151E2BAB3500E688A7 /* YLScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLScanView.swift; sourceTree = "<group>"; };
 		11377B8B1E1CA4C6008A23E8 /* YLScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YLScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11377B8E1E1CA4C6008A23E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11377B901E1CA4C6008A23E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				11377B9A1E1CA4C6008A23E8 /* Info.plist */,
 				1164B7971E24850500D58D1C /* YLScanViewSytle.swift */,
 				1164B7991E25BD1300D58D1C /* YLScanLineAnimation.swift */,
+				112AE8151E2BAB3500E688A7 /* YLScanView.swift */,
 			);
 			path = YLScan;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			files = (
 				1164B79A1E25BD1300D58D1C /* YLScanLineAnimation.swift in Sources */,
 				11377B911E1CA4C6008A23E8 /* ViewController.swift in Sources */,
+				112AE8161E2BAB3500E688A7 /* YLScanView.swift in Sources */,
 				1164B7961E247B1100D58D1C /* YLPhonePermissions.swift in Sources */,
 				1164B7981E24850500D58D1C /* YLScanViewSytle.swift in Sources */,
 				11377B8F1E1CA4C6008A23E8 /* AppDelegate.swift in Sources */,
