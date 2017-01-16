@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YLScanLineAnimation: UIImageView {
+public class YLScanLineAnimation: UIImageView {
 
     var isAnimationing = false
     var animationRect: CGRect = CGRect.zero
@@ -68,7 +68,7 @@ class YLScanLineAnimation: UIImageView {
         })
     }
     
-    func stopStepAnimation() {
+    public func stopStepAnimation() {
         self.isHidden = true
         isAnimationing = false
     }
