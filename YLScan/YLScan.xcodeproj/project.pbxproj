@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		112AE8161E2BAB3500E688A7 /* YLScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112AE8151E2BAB3500E688A7 /* YLScanView.swift */; };
 		112AE8181E2BAB8900E688A7 /* YLScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112AE8171E2BAB8900E688A7 /* YLScanViewController.swift */; };
+		112AE81A1E2C9F3200E688A7 /* YLScanIcon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 112AE8191E2C9F3200E688A7 /* YLScanIcon.bundle */; };
+		112AE81C1E2CA4CC00E688A7 /* YLScanViewSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112AE81B1E2CA4CC00E688A7 /* YLScanViewSetting.swift */; };
 		11377B8F1E1CA4C6008A23E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11377B8E1E1CA4C6008A23E8 /* AppDelegate.swift */; };
 		11377B911E1CA4C6008A23E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11377B901E1CA4C6008A23E8 /* ViewController.swift */; };
 		11377B941E1CA4C6008A23E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11377B921E1CA4C6008A23E8 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		112AE8151E2BAB3500E688A7 /* YLScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLScanView.swift; sourceTree = "<group>"; };
 		112AE8171E2BAB8900E688A7 /* YLScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLScanViewController.swift; sourceTree = "<group>"; };
+		112AE8191E2C9F3200E688A7 /* YLScanIcon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YLScanIcon.bundle; sourceTree = "<group>"; };
+		112AE81B1E2CA4CC00E688A7 /* YLScanViewSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLScanViewSetting.swift; sourceTree = "<group>"; };
 		11377B8B1E1CA4C6008A23E8 /* YLScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YLScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11377B8E1E1CA4C6008A23E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11377B901E1CA4C6008A23E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 		11377B8D1E1CA4C6008A23E8 /* YLScan */ = {
 			isa = PBXGroup;
 			children = (
+				112AE8191E2C9F3200E688A7 /* YLScanIcon.bundle */,
 				1164B7951E247B1100D58D1C /* YLPhonePermissions.swift */,
 				11377B8E1E1CA4C6008A23E8 /* AppDelegate.swift */,
 				11377B901E1CA4C6008A23E8 /* ViewController.swift */,
@@ -75,6 +80,7 @@
 				1164B7991E25BD1300D58D1C /* YLScanLineAnimation.swift */,
 				112AE8151E2BAB3500E688A7 /* YLScanView.swift */,
 				112AE8171E2BAB8900E688A7 /* YLScanViewController.swift */,
+				112AE81B1E2CA4CC00E688A7 /* YLScanViewSetting.swift */,
 			);
 			path = YLScan;
 			sourceTree = "<group>";
@@ -139,6 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112AE81A1E2C9F3200E688A7 /* YLScanIcon.bundle in Resources */,
 				11377B991E1CA4C6008A23E8 /* LaunchScreen.storyboard in Resources */,
 				11377B961E1CA4C6008A23E8 /* Assets.xcassets in Resources */,
 				11377B941E1CA4C6008A23E8 /* Main.storyboard in Resources */,
@@ -157,6 +164,7 @@
 				112AE8161E2BAB3500E688A7 /* YLScanView.swift in Sources */,
 				112AE8181E2BAB8900E688A7 /* YLScanViewController.swift in Sources */,
 				1164B7961E247B1100D58D1C /* YLPhonePermissions.swift in Sources */,
+				112AE81C1E2CA4CC00E688A7 /* YLScanViewSetting.swift in Sources */,
 				1164B7981E24850500D58D1C /* YLScanViewSytle.swift in Sources */,
 				11377B8F1E1CA4C6008A23E8 /* AppDelegate.swift in Sources */,
 			);
@@ -281,6 +289,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KD59NK3467;
 				INFOPLIST_FILE = YLScan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wangliugen.YLScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -294,6 +303,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KD59NK3467;
 				INFOPLIST_FILE = YLScan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wangliugen.YLScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
