@@ -25,7 +25,7 @@ public struct YLScanViewSytle {
     // MARK: - -中心位置矩形框
     
     /// 是否需要绘制扫码矩形框，默认YES
-    public var isNeedShowRetangle: Bool = true
+    public var isNeedShowRetangle: Bool = false
     
     /**
      *  默认扫码区域为正方形，如果扫码区域不是正方形，设置宽高比
@@ -49,7 +49,7 @@ public struct YLScanViewSytle {
     /**
      @brief  扫码区域的4个角类型
      */
-    public var photoframeAngleStyle = YLScanViewPhotoframeAngleStyle.Outer
+    public var photoframeAngleStyle = YLScanViewPhotoframeAngleStyle.Inner
     
     //4个角的颜色
     public var colorAngle = UIColor(red: 0.0, green: 167.0/255.0, blue: 231.0/255.0, alpha: 1.0)
@@ -60,7 +60,7 @@ public struct YLScanViewSytle {
     /**
      @brief  扫码区域4个角的线条宽度,默认6，建议8到4之间
      */
-    public var photoframeLineW:CGFloat = 6
+    public var photoframeLineW:CGFloat = 4
     //MARK:--动画效果
     public var animationStyle = YLScanViewAnimationStyle.LineMove
     /**

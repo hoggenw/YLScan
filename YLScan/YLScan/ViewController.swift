@@ -19,18 +19,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         ["只识别框内","recoCropRect"],
         ["改变尺寸","changeSize"],
         ["条形码效果","notSquare"],
+        ["二维码/条形码生成","myCode"],
         ["相册","openLocalPhotoAlbum"]
     ];
     var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView = UITableView(frame: CGRect(x: 0, y: 64, width: view.frame.width, height: view.frame.height))
-        self.title = "swift 扫一扫"
-        tableView.delegate = self
-        tableView.dataSource = self
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
-        view.addSubview(tableView)
+//        tableView = UITableView(frame: CGRect(x: 0, y: 20, width: view.frame.width, height: view.frame.height))
+//        self.title = "swift 扫一扫"
+//        tableView.delegate = self
+//        tableView.dataSource = self
+//        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+//        view.addSubview(tableView)
         // Do any additional setup after loading the view, typically from a nib.
+        let manager = YLScanViewManager.shareManager()
+        manager.isNeedShowRetangle = false
+       // manager.whRatio = 0.5
+        //manager.centerUpOffset = -20
+        manager.scanViewWidth = 240
+        manager.delegate = self
+        manager.showScanView(viewController: self)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -92,7 +100,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         style.isNeedShowRetangle = false;
         
         style.animationStyle = YLScanViewAnimationStyle.NetGrid;
-        style.animationImage = UIImage(named: "CodeScan.bundle/qrcode_scan_full_net")
+        style.animationImage = UIImage(named: "YLScanIcon.bundle/qrcode_scan_full_net")
+       // print("image=%@",UIImage(named: "YLScanIcon.bundle/qrcode_scan_full_net"))
         
         
         
@@ -164,7 +173,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         style.animationStyle = YLScanViewAnimationStyle.LineMove;
         
         //qq里面的线条图片
-        style.animationImage = UIImage(named: "CodeScan.bundle/qrcode_scan_light_green")
+        style.animationImage = UIImage(named: "YLScanIcon.bundle/qrcode_scan_light_green")
         
         let vc = YLScanViewController();
         vc.scanStyle = style
@@ -184,13 +193,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         style.photoframeAngleW = 18;
         style.photoframeAngleH = 18;
         style.isNeedShowRetangle = false;
+        style.xScanRetangleOffset = 40;
         
         style.animationStyle = YLScanViewAnimationStyle.LineMove;
         
         style.colorAngle = UIColor(red: 0.0/255, green: 200.0/255.0, blue: 20.0/255.0, alpha: 1.0)
         
         
-        style.animationImage = UIImage(named: "CodeScan.bundle/qrcode_Scan_weixin_Line")
+        style.animationImage = UIImage(named: "YLScanIcon.bundle/qrcode_Scan_weixin_Line")
         
         
         let vc = YLScanViewController();
@@ -218,7 +228,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         style.xScanRetangleOffset = 80;
         
         //使用的支付宝里面网格图片
-        style.animationImage = UIImage(named: "CodeScan.bundle/qrcode_scan_part_net")
+        style.animationImage = UIImage(named: "YLScanIcon.bundle/qrcode_scan_part_net")
         
         let vc = YLScanViewController();
         vc.scanStyle = style
@@ -249,7 +259,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         //使用的支付宝里面网格图片
-        style.animationImage = UIImage(named: "CodeScan.bundle/qrcode_scan_part_net");
+        style.animationImage = UIImage(named: "YLScanIcon.bundle/qrcode_scan_part_net");
         
         let vc = YLScanViewController();
         vc.scanStyle = style
@@ -273,7 +283,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         style.animationStyle = YLScanViewAnimationStyle.LineMove;
         
         //使用的支付宝里面网格图片
-        style.animationImage = UIImage(named: "CodeScan.bundle/qrcode_scan_light_green");
+        style.animationImage = UIImage(named: "YLScanIcon.bundle/qrcode_scan_light_green");
         
         //4个角的颜色
         style.colorAngle = UIColor(red: 65.0/255.0, green: 174.0/255.0, blue: 57.0/255.0, alpha: 1.0)
@@ -317,7 +327,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //qq里面的线条图片
         
-        style.animationImage = UIImage(named: "CodeScan.bundle/qrcode_scan_light_green")
+        style.animationImage = UIImage(named: "YLScanIcon.bundle/qrcode_scan_light_green")
         let vc = YLScanViewController();
         vc.scanStyle = style
         
@@ -387,5 +397,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
 
+}
+
+extension ViewController: YLScanViewManagerDelegate {
+    func scanSuccessWith(result: YLScanResult) {
+         print("wlg====%@",result.strScanned!)
+    }
 }
 

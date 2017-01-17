@@ -73,7 +73,7 @@ open class YLScanViewSetting: NSObject ,AVCaptureMetadataOutputObjectsDelegate {
         // Output
         output = AVCaptureMetadataOutput()
         super.init()
-        guard device == nil else {
+        guard device != nil else {
             return
         }
         if session.canAddInput(input)

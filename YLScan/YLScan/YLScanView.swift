@@ -174,7 +174,7 @@ open class YLScanView: UIView {
     }
     
     func startScanAnimation() {
-        guard isAnimationing else {
+        guard !isAnimationing else {
             return
         }
         isAnimationing = true
@@ -196,6 +196,58 @@ open class YLScanView: UIView {
         default:
             break
         }
+    }
+    func deviceStartReadying(readyStr:String)
+    {
+        let XRetangleLeft = viewStyle.xScanRetangleOffset
+        
+        let sizeRetangle = getRetangeSize()
+        
+        //扫码区域Y轴最小坐标
+        let YMinRetangle = self.frame.size.height / 2.0 - sizeRetangle.height/2.0 - viewStyle.centerUpOffset
+        
+        //设备启动状态提示
+        if (activityView == nil)
+        {
+            self.activityView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+            
+            activityView?.center = CGPoint(x: XRetangleLeft +  sizeRetangle.width/2 - 50, y: YMinRetangle + sizeRetangle.height/2)
+            activityView?.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+            
+            addSubview(activityView!)
+            
+            
+            let labelReadyRect = CGRect(x: activityView!.frame.origin.x + activityView!.frame.size.width + 10, y: activityView!.frame.origin.y, width: 100, height: 30);
+            //print("%@",NSStringFromCGRect(labelReadyRect))
+            self.labelReadying = UILabel(frame: labelReadyRect)
+            labelReadying?.text = readyStr
+            labelReadying?.backgroundColor = UIColor.clear
+            labelReadying?.textColor = UIColor.white
+            labelReadying?.font = UIFont.systemFont(ofSize: 18.0)
+            addSubview(labelReadying!)
+        }
+        
+        addSubview(labelReadying!)
+        activityView?.startAnimating()
+        
+    }
+    
+    func getRetangeSize()->CGSize
+    {
+        let XRetangleLeft = viewStyle.xScanRetangleOffset
+        
+        var sizeRetangle = CGSize(width: self.frame.size.width - XRetangleLeft*2, height: self.frame.size.width - XRetangleLeft*2)
+        
+        let w = sizeRetangle.width;
+        var h = w / viewStyle.whRatio;
+        
+        
+        let hInt:Int = Int(h)
+        h = CGFloat(hInt)
+        
+        sizeRetangle = CGSize(width: w, height:  h)
+        
+        return sizeRetangle
     }
     
     

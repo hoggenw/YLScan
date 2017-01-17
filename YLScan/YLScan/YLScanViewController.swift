@@ -10,6 +10,10 @@ import UIKit
 import Foundation
 import AVFoundation
 
+protocol YLScanViewControllerDelegate {
+    func scanViewControllerSuccessWith(result: YLScanResult)
+}
+
 open class YLScanViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     private var scanObj: YLScanViewSetting?
@@ -23,6 +27,8 @@ open class YLScanViewController: UIViewController, UIImagePickerControllerDelega
     
     //是否需要识别后的当前图像
     var isNeedCodeImage = false
+    
+    var delegate: YLScanViewControllerDelegate?
     
     deinit {
         print("YLScanViewController deinit")
@@ -52,7 +58,7 @@ open class YLScanViewController: UIViewController, UIImagePickerControllerDelega
             qRScanView = YLScanView(frame: self.view.frame,scanViewStyle:scanStyle )
             self.view.addSubview(qRScanView!)
         }
-        //        qRScanView?.deviceStartReadying(readyStr: "相机启动中...")
+            qRScanView?.deviceStartReadying(readyStr: "相机启动中...")
     }
     
     
@@ -108,7 +114,7 @@ open class YLScanViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     open func startScan() {
-        if(!YLPhonePermissions .isGetCameraPermission()) {
+        if(!YLPhonePermissions.isGetCameraPermission()) {
             showMsg(title: "提示", message: "没有相机权限，请到设置->隐私中开启本程序相机权限")
             return
         }
@@ -155,8 +161,8 @@ open class YLScanViewController: UIViewController, UIImagePickerControllerDelega
         }
         
         let result:YLScanResult = arrayResult[0]
-        
-        showMsg(title: result.strBarCodeType, message: result.strScanned)
+        delegate?.scanViewControllerSuccessWith(result: result)
+        //showMsg(title: result.strBarCodeType, message: result.strScanned)
     }
     
     override open func didReceiveMemoryWarning() {

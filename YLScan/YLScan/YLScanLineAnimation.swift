@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class YLScanLineAnimation: UIImageView {
+class YLScanLineAnimation: UIImageView {
 
     var isAnimationing = false
     var animationRect: CGRect = CGRect.zero
@@ -40,7 +40,7 @@ public class YLScanLineAnimation: UIImageView {
     }
     
     func stepAnimation()  {
-        guard !isAnimationing else {
+        guard isAnimationing else {
             return
         }
         
