@@ -162,6 +162,7 @@ open class YLScanViewController: UIViewController, UIImagePickerControllerDelega
         
         let result:YLScanResult = arrayResult[0]
         delegate?.scanViewControllerSuccessWith(result: result)
+        _ = self.navigationController?.popViewController(animated: true)
         //showMsg(title: result.strBarCodeType, message: result.strScanned)
     }
     

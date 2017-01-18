@@ -33,10 +33,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        view.addSubview(tableView)
         // Do any additional setup after loading the view, typically from a nib.
         let manager = YLScanViewManager.shareManager()
-        manager.isNeedShowRetangle = false
+        manager.isNeedShowRetangle = true
        // manager.whRatio = 0.5
         //manager.centerUpOffset = -20
-        manager.scanViewWidth = 240
+       // manager.scanViewWidth = 160
+        //manager.colorRetangleLine = UIColor.red
+        //manager.photoframeAngleStyle = YLScanViewPhotoframeAngleStyle.Outer
+        //manager.colorAngle = UIColor.red
+        //manager.photoframeLineW = 8
+        manager.imageStyle = YLAnimationImageStyle.secondeNetGrid
         manager.delegate = self
         manager.showScanView(viewController: self)
     }
