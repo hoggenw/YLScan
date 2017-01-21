@@ -78,6 +78,11 @@ open class YLScanViewController: UIViewController, UIImagePickerControllerDelega
         
         scanObj?.stop()
     }
+    //开关闪光灯
+    func openOrCloseFlash()
+    {
+
+    }
     
     open func openPhotoAlbum() {
         if(!YLPhonePermissions.isGetPhotoPermission())
