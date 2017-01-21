@@ -25,6 +25,10 @@ open class YLScanViewController: UIViewController, UIImagePickerControllerDelega
     //识别码的类型
     var arrayCodeType: [String]?
     
+    //闪光灯
+    var btnFlash:UIButton = UIButton()
+
+    
     //是否需要识别后的当前图像
     var isNeedCodeImage = false
     
