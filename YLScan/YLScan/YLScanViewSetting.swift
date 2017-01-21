@@ -240,6 +240,20 @@ open class YLScanViewSetting: NSObject ,AVCaptureMetadataOutputObjectsDelegate {
         }
         return false
     }
+    class open func imageFromBundleWithName(name: String) -> UIImage{
+        let image = UIImage(contentsOfFile: YLScanViewSetting.resourceWithName(name))
+        if let _ = image {
+            return image!
+        }else {
+            return UIImage(contentsOfFile: String(format: "%@%@", YLScanViewSetting.resourceWithName(name),".png"))!
+        }
+    }
+    class open func resourceWithName(_ fileName: String) -> String {
+        let scanViewBunlde: Bundle = Bundle.init(for: YLScanViewController.self)
+        let fileRootPath = scanViewBunlde.bundlePath.appending("/YLScanIcon.bundle/")
+        let filePath = String(format: "%@%@", fileRootPath,fileName)
+        return filePath
+    }
     /**
      打开或关闭闪关灯
      - parameter torch: true：打开闪关灯 false:关闭闪光灯
