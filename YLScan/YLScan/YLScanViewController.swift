@@ -28,7 +28,6 @@ open class YLScanViewController: UIViewController, UIImagePickerControllerDelega
     //闪光灯
     var btnFlash:UIButton = UIButton()
 
-    
     //是否需要识别后的当前图像
     var isNeedCodeImage = false
     
@@ -42,6 +41,7 @@ open class YLScanViewController: UIViewController, UIImagePickerControllerDelega
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
         self.edgesForExtendedLayout = UIRectEdge(rawValue: 0)
+        //initialBottomView()
 
         // Do any additional setup after loading the view.
     }
@@ -69,6 +69,7 @@ open class YLScanViewController: UIViewController, UIImagePickerControllerDelega
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         startScan()
+        initialBottomView()
     }
     override open func viewWillDisappear(_ animated: Bool) {
         
@@ -78,10 +79,21 @@ open class YLScanViewController: UIViewController, UIImagePickerControllerDelega
         
         scanObj?.stop()
     }
+    
+    func initialBottomView() {
+         let size = CGSize(width: 65, height: 87);
+        btnFlash.bounds = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        btnFlash.center = CGPoint(x: self.view.frame.width/2, y: self.view.frame.height - 80)
+        btnFlash.setImage(YLScanViewSetting.imageFromBundleWithName(name:  "qrcode_scan_btn_flash_nor"), for:UIControlState.normal)
+        btnFlash.setImage(YLScanViewSetting.imageFromBundleWithName(name:  "qrcode_scan_btn_flash_down"), for:UIControlState.selected)
+        btnFlash.addTarget(self, action: #selector(openOrCloseFlash(sender:)), for: UIControlEvents.touchUpInside)
+        self.view.addSubview(btnFlash)
+    }
     //开关闪光灯
-    func openOrCloseFlash()
-    {
-
+    func openOrCloseFlash(sender:UIButton){
+        scanObj?.changeTorch()
+        sender.isSelected = !sender.isSelected
+        
     }
     
     open func openPhotoAlbum() {
