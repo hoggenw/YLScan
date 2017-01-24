@@ -148,9 +148,15 @@ public class YLScanViewManager: NSObject {
         return scanViewManager;
     }
 
+    //显示扫描界面
     public func showScanView(viewController: UIViewController) {
         scanViewController.delegate = self
         viewController.navigationController?.pushViewController(scanViewController, animated: true)
+    }
+    //生成二维码界面
+    public  func produceScanView(frame:CGRect) -> UIView {
+        
+        return UIView()
     }
     
 }
