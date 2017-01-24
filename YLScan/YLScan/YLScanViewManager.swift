@@ -154,7 +154,7 @@ public class YLScanViewManager: NSObject {
         viewController.navigationController?.pushViewController(scanViewController, animated: true)
     }
     //生成二维码界面
-    public  func produceScanView(frame:CGRect) -> UIView {
+    public  func produceQRcodeView(frame:CGRect) -> UIView {
         
         return UIView()
     }
